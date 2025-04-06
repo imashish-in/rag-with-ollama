@@ -19,25 +19,35 @@ This project implements a RAG system that:
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.11
+- Conda (for environment management)
 - Ollama (with llama3.2 model)
 - Required Python packages (see requirements.txt)
 
 ## Installation
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/yourusername/rag-with-ollama.git
    cd rag-with-ollama
    ```
 
-2. Install dependencies:
+2. Create and activate a conda environment with Python 3.11:
+   ```bash
+   # Create conda environment
+   conda create -p rag-ollama python=3.11
+   
+   # Activate the environment
+   conda activate rag-ollama/
    ```
+
+3. Install dependencies:
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. Make sure Ollama is installed and the llama3.2 model is available:
-   ```
+4. Make sure Ollama is installed and the llama3.2 model is available:
+   ```bash
    ollama pull llama3.2
    ```
 
@@ -50,12 +60,12 @@ This project implements a RAG system that:
    ```
 
 2. Run the vector database manager to process URLs and create embeddings:
-   ```
+   ```bash
    python vector_db_manager.py
    ```
 
 3. Start the Streamlit app:
-   ```
+   ```bash
    streamlit run app.py
    ```
 
@@ -68,6 +78,3 @@ This project implements a RAG system that:
 - `urls.txt`: List of URLs to process
 - `chroma_db/`: Directory for the vector database (created automatically)
 
-## License
-
-MIT 
